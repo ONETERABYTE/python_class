@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script>
+             var list = [
+    ["Students", "2019"],            
+    ["Mufeezah" , 90],
+    ["Muhammad" , 75],
+    ["Nana" , 80],
+    ["Abdulmatin" , 60],
+    ["Abdulrahman" , 45],
+    ["Rasak" , 85],
+    ["Asiyah" , 92],
+    ["Khadijah" , 60],
+    ["Yasir" , 20],
+    ["Hamad" , 42]
+        ]
+        </script>
+
+    <div id="dual_x_div" style="width: 900px; height: 500px;"></div>
+    <script>
+      google.charts.load("current", { packages: ["bar"] });
+      google.charts.setOnLoadCallback(drawStuff);
+
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable(list);
+
+        var options = {
+          width: 900,
+          chart: {
+            title: "AL MUHMIN STUDENT RECORDS 2019",
+            subtitle: "Top 10 STUDENTS"
+          },
+          bars: "vertical", // Required for Material Bar Charts.
+          series: {
+            0: { axis: "distance" }, // Bind series 0 to an axis named 'distance'.
+            1: { axis: "brightness" } // Bind seri es 1 to an axis named 'brightness'.
+          },
+          axes: {
+            x: {
+              distance: { label: "marks" }, // Bottom x-axis.
+              brightness: {
+                side: "top",
+                label: "Top 10 STUDENT RECORDS"
+              } // Top x-axis.
+            }
+          }
+        };
+
+        var chart = new google.charts.Bar(
+          document.getElementById("dual_x_div")
+        );
+        chart.draw(data, options);
+      }
+    </script>
+    
+
+    
+</body>
+</html>
+
+

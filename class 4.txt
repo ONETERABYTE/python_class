@@ -1,0 +1,6 @@
+m = int(input("please enter a value for 'm' : "))
+x = int(input("please enter a value for 'x' : "))
+b = int(input("please enter a value for 'b' : "))
+
+y = (m* x) + b
+print(y)
